@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.suporte.myapplication.EfetuarLancamentoActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e2ecf2">
+
+
+
+    <ScrollView
+        android:id="@+id/efetuar_lancamento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/form_efetuar_lancamento"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Tipo pagamento"/>
+
+            <RadioGroup
+                android:id="@+id/tipoPagamento"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:checkedButton="@+id/recebido">
+
+                <RadioButton
+                    android:id="@+id/recebido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@android:color/holo_green_dark"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Recebimento" />
+
+                <RadioButton
+                    android:id="@+id/pagou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@android:color/holo_red_dark"
+                    android:checked="false"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Pagamento" />
+
+            </RadioGroup>
+            <EditText
+                android:id="@+id/valor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Valor Lancamento"
+                android:inputType="numberDecimal"/>
+            <EditText
+                android:id="@+id/descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Descricao"
+                android:inputType="textPersonName"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dataVencimento"
+                android:hint="Data Vencimento"
+                android:inputType="date"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dataPagamento"
+                android:hint="Data Pagamento"
+                android:inputType="date"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Status"/>
+            <RadioGroup
+                android:id="@+id/status"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:checkedButton="@+id/pago">
+
+                <RadioButton
+                    android:id="@+id/pago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@android:color/holo_green_dark"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Pago" />
+
+                <RadioButton
+                    android:id="@+id/naoPago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:buttonTint="@android:color/holo_red_dark"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Não Pago" />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
