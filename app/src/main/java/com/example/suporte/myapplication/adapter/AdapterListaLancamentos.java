@@ -80,8 +80,4 @@ public class AdapterListaLancamentos extends BaseAdapter {
         return view;
     }
 
-    public String dataConvertida(Date data) {
-        String dataConvertida;
-        return dataConvertida = new SimpleDateFormat("dd/MM/yyyy").format(data);
-    }
-}
+  }

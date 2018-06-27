@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
-import com.example.suporte.myapplication.dao.LancamentoDao;
 import com.example.suporte.myapplication.model.Lancamento;
 import com.example.suporte.myapplication.model.LancamentoFirebase;
 import com.example.suporte.myapplication.model.Mask;
@@ -29,16 +27,16 @@ import java.util.Calendar;
 
 public class EfetuarLancamentoActivity extends AppCompatActivity {
 
-    LancamentoFirebase lancamentoFirebase;
-    Lancamento lancamento;
-    EditText etDate;
-    Mask mascara;
+    private LancamentoFirebase lancamentoFirebase;
+    private Lancamento lancamento;
+    private EditText etDate;
+    private Mask mascara;
     private View efetuarLancamentoView;
     private Usuario usuario;
-    int status;
-    int tipoLancamento;
-    FormHelper formHelper;
-    RadioButton pago;
+    private int status;
+    private int tipoLancamento;
+    private FormHelper formHelper;
+    private RadioButton pago;
     private DatabaseReference mDatabase;
     private static final String ARQUIVO_PREFERENCIA = "ArqPreferencia";
     @Override
@@ -158,7 +156,6 @@ public class EfetuarLancamentoActivity extends AppCompatActivity {
 
                                 SharedPreferences sharedPref = getSharedPreferences(ARQUIVO_PREFERENCIA, 0);
                                 String emailRecuperado = sharedPref.getString("email", "");
-                                LancamentoDao dao = new LancamentoDao(EfetuarLancamentoActivity.this);
                                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference ref = database.getReference();
                                 lancamentoFirebase.setStatus(lancamento.getStatus());
@@ -181,9 +178,7 @@ public class EfetuarLancamentoActivity extends AppCompatActivity {
                     }
                 }
         }
-        /*itemRef=mDatabase.getReference().child("items").child(itemId).child("name");
-        mItemsRef.setValue("Novo Nome do Item");
-*/
+
         return super.onOptionsItemSelected(item);
     }
     public void onRadioButtonClicked(View view){

@@ -6,7 +6,7 @@
     android:layout_marginLeft="20dp"
     android:background="@drawable/teste"
     android:elevation="10dp"
-    android:gravity="center"
+    android:gravity="left"
     android:orientation="vertical">
 
 

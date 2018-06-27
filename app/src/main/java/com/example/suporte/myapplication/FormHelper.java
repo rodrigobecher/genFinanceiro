@@ -119,10 +119,6 @@ public class FormHelper {
         this.lancamentoFirebase = lancamento;
 
     }
-    public String dataConvertida(Date data) {
-        String dataConvertida;
-        return dataConvertida = new SimpleDateFormat("dd/MM/yyyy").format(data);
-    }
 
 }
 

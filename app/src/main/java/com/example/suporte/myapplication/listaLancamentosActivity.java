@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.suporte.myapplication.adapter.AdapterListaLancamentos;
-import com.example.suporte.myapplication.dao.LancamentoDao;
 import com.example.suporte.myapplication.model.Lancamento;
 import com.example.suporte.myapplication.model.LancamentoFirebase;
 import com.google.firebase.database.DatabaseReference;

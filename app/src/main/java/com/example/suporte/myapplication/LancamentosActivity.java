@@ -22,8 +22,6 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.suporte.myapplication.dao.LancamentoDao;
 import com.example.suporte.myapplication.model.Lancamento;
 import com.example.suporte.myapplication.model.LancamentoFirebase;
 import com.example.suporte.myapplication.model.Mask;
@@ -57,8 +55,7 @@ public class LancamentosActivity extends AppCompatActivity
     private DatabaseReference mDatabase;
     private EditText filtroDataPagamento;
     private LancamentoFirebase lancamento;
-    Mask mascara;
-    private LancamentoDao dao;
+    private Mask mascara;
     private List<LancamentoFirebase> listaLancamentos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,7 +186,7 @@ public class LancamentosActivity extends AppCompatActivity
                     for (DataSnapshot data: dataSnapshot.getChildren()) {
                         lancamento = data.getValue(LancamentoFirebase.class);
                         SimpleDateFormat sdfe = new SimpleDateFormat("dd-MM-yyyy");
-                        if(lancamento.getDataVencimento().equals(sdfe.format(dataPag))){
+                        if(lancamento.getDataPagament().equals(sdfe.format(dataPag))){
                             listaLancamentos.add(lancamento);
                         }
                     }
@@ -292,15 +289,5 @@ public class LancamentosActivity extends AppCompatActivity
     return emailRecuperado;
     }
 
-    public Date converteData(String data){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            Date dataConvertida = new Date(sdf.parse(data).getTime());
-            return dataConvertida;
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 }

@@ -33,8 +33,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.suporte.myapplication.dao.LancamentoDao;
 import com.example.suporte.myapplication.model.Lancamento;
 import com.example.suporte.myapplication.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -75,7 +73,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-    private LancamentoDao dao;
     private FirebaseAuth firebaseAuth;
     private String email;
     private String senha;
